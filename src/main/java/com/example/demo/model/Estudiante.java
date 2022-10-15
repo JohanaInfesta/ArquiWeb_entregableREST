@@ -81,6 +81,7 @@ public class Estudiante {
 	public List<CarreraEstudiante> getCarreras() {
 		return carreras;
 	}
+	
 
 	@Override
 	public String toString() {
