@@ -34,7 +34,7 @@ public class Estudiante {
 	private String ciudad;
 	
 	@OneToMany(mappedBy = "estudiante", fetch=FetchType.LAZY)
-	private List <CarreraEstudiante>carreras;
+	private List <CarreraEstudiante>inscripcion;
 
 	public Estudiante() {
 		super();
@@ -79,7 +79,7 @@ public class Estudiante {
 	}
 
 	public List<CarreraEstudiante> getCarreras() {
-		return carreras;
+		return inscripcion;
 	}
 	
 

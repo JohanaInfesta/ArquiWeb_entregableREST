@@ -20,6 +20,11 @@ public class EstudianteControllerJpa {
 	@Autowired
 	private EstudianteService service;
 	
+	public EstudianteControllerJpa(@Qualifier("estudianteService")EstudianteService service) {
+		super();
+		this.service = service;
+	}
+
 	@PostMapping("/estudiante")
 	Estudiante matricularEstudiante(@RequestBody Estudiante e) {
 		return service.addEstudiante(e);
@@ -35,10 +40,9 @@ public class EstudianteControllerJpa {
 		return service.getEstudiante(libreta);
 	}
 	
-
-	
-	
-
-	
+	@GetMapping("/estudiantes/{genero}")
+	public List<Estudiante>getEstudianteByGenero(@PathVariable String genero){
+		return service.getGenero(genero);
+	}
 	
 }

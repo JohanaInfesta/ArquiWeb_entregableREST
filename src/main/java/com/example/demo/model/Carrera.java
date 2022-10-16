@@ -24,7 +24,7 @@ public class Carrera {
 	private String nombre;
 	
  	@OneToMany(mappedBy = "carrera", fetch=FetchType.LAZY)
-	private List<CarreraEstudiante>estudiantes;
+	private List<CarreraEstudiante>inscripcion;
  	
  	@Column
  	private int duracionAnios;
@@ -47,7 +47,7 @@ public class Carrera {
 	}
 
 	public List<CarreraEstudiante> getEstudiantes() {
-		return estudiantes;
+		return inscripcion;
 	}
 
 	public int getDuracionAnios() {
@@ -56,8 +56,10 @@ public class Carrera {
 
 	@Override
 	public String toString() {
-		return "Carrera [nombre=" + nombre + ", duracionAnios=" + duracionAnios + "]";
+		return "nombre=" + nombre + ", duracionAnios=" + duracionAnios + "]";
 	}
+
+	
  	
  	
 }

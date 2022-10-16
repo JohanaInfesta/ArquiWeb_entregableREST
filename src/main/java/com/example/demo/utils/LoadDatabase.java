@@ -1,4 +1,4 @@
-package com.example.demo.services;
+package com.example.demo.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,19 +21,19 @@ public class LoadDatabase {
 private static final Logger logger = LoggerFactory.getLogger(LoadDatabase.class);
 	
 
-	@Bean
-	CommandLineRunner initEstudiante(@Qualifier("estudianteRepository") EstudianteRepository repository) {
-		return args -> {
-			logger.info("preloading" + repository.save(new Estudiante("Seba", "Perez", 20, "masculino", 40520425, "Tandil")));
-			logger.info("preloading" + repository.save(new Estudiante("Jose", "Gomez", 21, "masculino", 41520425, "Tandil")));
-		};
-	}
-	
-	
-	@Bean
-	CommandLineRunner initCarrera(@Qualifier("carreraRepository") CarreraRepository repository) {
-		return args -> {
-			logger.info("preloading" + repository.save(new Carrera("TUDAI", 3)));
-		};
-	}
+//	@Bean
+//	CommandLineRunner initEstudiante(@Qualifier("estudianteRepository") EstudianteRepository repository) {
+//		return args -> {
+//			logger.info("preloading" + repository.save(new Estudiante("Seba", "Perez", 20, "masculino", 40520425, "Tandil")));
+//			logger.info("preloading" + repository.save(new Estudiante("Jose", "Gomez", 21, "masculino", 41520425, "Tandil")));
+//		};
+//	}
+//	
+//	
+//	@Bean
+//	CommandLineRunner initCarrera(@Qualifier("carreraRepository") CarreraRepository repository) {
+//		return args -> {
+//			logger.info("preloading" + repository.save(new Carrera("TUDAI", 3)));
+//		};
+//	}
 }

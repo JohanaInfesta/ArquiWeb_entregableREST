@@ -1,43 +1,47 @@
 package com.example.demo.controller;
 
-import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Carrera;
-import com.example.demo.model.CarreraEstudiante;
-import com.example.demo.model.Estudiante;
-import com.example.demo.repository.CarreraEstudianteRepository;
-import com.example.demo.repository.CarreraRepository;
-import com.example.demo.repository.EstudianteRepository;
+import com.example.demo.services.CarreraEstudianteService;
 
 @RestController
 public class CarreraEstudianteControllerJpa {
 
-	@Qualifier("carreraEstudianteRepository")
+	@Qualifier("carreraEstudianteService")
 	@Autowired
-	private final CarreraEstudianteRepository repository;
-	private final EstudianteRepository estudianteRepository;
-	private final CarreraRepository carreraRepository;
-	
-	public CarreraEstudianteControllerJpa(@Qualifier("carreraEstudianteRepository") CarreraEstudianteRepository repository,
-			@Qualifier("estudianteRepository") EstudianteRepository estudianteRepository,
-			@Qualifier("carreraRepository") CarreraRepository carreraRepository) {
-		this.repository = repository;
-		this.carreraRepository = carreraRepository;
-		this.estudianteRepository = estudianteRepository;
+	private final CarreraEstudianteService service;
+
+
+	//	private final EstudianteRepository estudianteRepository;
+	//	private final CarreraRepository carreraRepository;
+	//	
+	public CarreraEstudianteControllerJpa(@Qualifier("carreraEstudianteService")CarreraEstudianteService service) {
+		this.service = service;
 	}
+	
+	
 	// ALERTA NO ANDA
 	// ALERTA -> LE PODEMOS PASAR LA ENTIDAD
-	@PostMapping("matricular/{estudianteId}/{carreraID}")
-	public CarreraEstudiante matricularEstudiante(@PathVariable int estudianteId, @PathVariable int carreraID) {
-		Estudiante es = estudianteRepository.getEstudianteById(estudianteId);
-		Carrera ca = carreraRepository.getCarreraById(carreraID);
-		
-		CarreraEstudiante ce = new CarreraEstudiante(ca, es, LocalDate.now(), null);
-		return repository.save(ce);
+	//	@PostMapping("matricular/{estudianteId}/{carreraID}")
+	//	public CarreraEstudiante matricularEstudiante(@PathVariable int estudianteId, @PathVariable int carreraID) {
+	//		Estudiante es = estudianteRepository.getEstudianteById(estudianteId);
+	//		Carrera ca = carreraRepository.getCarreraById(carreraID);
+	//		
+	//		CarreraEstudiante ce = new CarreraEstudiante(ca, es, LocalDate.now(), null);
+	//		return repository.save(ce);
+	//	}
+
+	@GetMapping("/carreras")
+	public List<Carrera>getCarrerasOrder(){
+		return service.getCarrerasInOrder();
 	}
+
+
+	
 }

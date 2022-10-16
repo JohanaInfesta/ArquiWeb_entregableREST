@@ -1,31 +1,30 @@
 package com.example.demo.controller;
 
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Carrera;
-import com.example.demo.repository.CarreraRepository;
+import com.example.demo.services.CarreraService;
 
 
 @RestController
 public class CarreraControllerJpa {
 
-	@Qualifier("carreraRepository")
+	@Qualifier("carreraService")
 	@Autowired
-	private final CarreraRepository repository;
+	private final CarreraService service;
 	
-	public CarreraControllerJpa(@Qualifier("carreraRepository") CarreraRepository repository) {
-		this.repository = repository;
+	public CarreraControllerJpa(@Qualifier("carreraService")CarreraService service) {
+		this.service = service;
 	}
-	
-	@GetMapping("/carrera/{carreraID}")
-	Optional<Carrera>one(@PathVariable int carreraID){
-		return repository.findById(carreraID);
+
+	@PostMapping("/carrera")
+	Carrera agregarCarrera(@RequestBody Carrera c) {
+		return service.addCarrera(c);
 	}
 	
 }

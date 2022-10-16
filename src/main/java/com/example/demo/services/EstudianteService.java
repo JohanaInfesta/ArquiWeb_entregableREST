@@ -16,6 +16,11 @@ public class EstudianteService {
 	@Qualifier("estudianteRepository")
 	@Autowired
 	private EstudianteRepository repository;
+	
+	public EstudianteService(@Qualifier("estudianteRepository")EstudianteRepository repository) {
+		this.repository = repository;
+	}
+
 	/**
 	 * 2
 	 * a) dar de alta un estudiante
@@ -54,5 +59,13 @@ public class EstudianteService {
 		return repository.getEstudianteById(libreta);
 	}
 	
-	
+	/**
+	 * 2
+	 * e) recuperar todos los estudiantes, en base a su género.
+	 * @param genero
+	 * @return lista de estudiantes por genero
+	 */
+	public List<Estudiante>getGenero(String genero){
+		return repository.getEstudianteByGenero(genero);
+	}
 }
