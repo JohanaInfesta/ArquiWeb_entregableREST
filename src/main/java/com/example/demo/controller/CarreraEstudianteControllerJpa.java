@@ -14,7 +14,16 @@ import com.example.demo.model.Estudiante;
 import com.example.demo.model.dto.CarreraDTO;
 import com.example.demo.model.dto.ReporteDTO;
 import com.example.demo.services.CarreraEstudianteService;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @RestController
 public class CarreraEstudianteControllerJpa {
 
@@ -23,23 +32,14 @@ public class CarreraEstudianteControllerJpa {
 	private final CarreraEstudianteService service;
 
 
-	//	private final EstudianteRepository estudianteRepository;
-	//	private final CarreraRepository carreraRepository;
-	//	
 	public CarreraEstudianteControllerJpa(@Qualifier("carreraEstudianteService")CarreraEstudianteService service) {
 		this.service = service;
 	}
-	
-	
-	// ALERTA NO ANDA
-	// ALERTA -> LE PODEMOS PASAR LA ENTIDAD
-		@PostMapping("matricular/{libreta}/{carreraID}")
-		public CarreraEstudiante matricularEstudiante(@PathVariable int libreta, @PathVariable int carreraID) {
-			return service.matricularEstudiante(libreta, carreraID);
-	//		
-	//		CarreraEstudiante ce = new CarreraEstudiante(ca, es, LocalDate.now(), null);
-	//		return repository.save(ce);
-		}
+
+	@PostMapping("matricular/{libreta}/{carreraID}")
+	public CarreraEstudiante matricularEstudiante(@PathVariable int libreta, @PathVariable int carreraID) {
+		return service.matricularEstudiante(libreta, carreraID);
+	}
 
 	@GetMapping("/carreras")
 	public List<CarreraDTO>getCarrerasOrder(){
@@ -51,10 +51,10 @@ public class CarreraEstudianteControllerJpa {
 		System.out.println(carreraID);
 		return service.getEstudiantesCarrera(carreraID, ciudad);
 	}
-	
+
 	@GetMapping("/reporte")
 	public List<ReporteDTO>getReporte(){
 		return service.generarReporte();
 	}
-	
+
 }

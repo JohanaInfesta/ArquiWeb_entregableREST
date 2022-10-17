@@ -1,7 +1,16 @@
 package com.example.demo.model.dto;
 
 import java.time.LocalDate;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 public class ReporteDTO {
 
 	private String nombreCarrera;

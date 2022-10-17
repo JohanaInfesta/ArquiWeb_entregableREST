@@ -9,7 +9,16 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Estudiante;
 import com.example.demo.repository.EstudianteRepository;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @Service
 public class EstudianteService {
 
@@ -22,18 +31,16 @@ public class EstudianteService {
 	}
 
 	/**
-	 * 2
-	 * a) dar de alta un estudiante
+	 * 2 a) dar de alta un estudiante
 	 * @param e
-	 * @return
+	 * @return estudiante
 	 */
 	public Estudiante addEstudiante(Estudiante e) {
 		return repository.save(e);
 	}
 	
 	/**
-	 * 2
-	 * c) recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple
+	 * 2 c) recuperar todos los estudiantes, y especificar algún criterio de ordenamiento simple
 	 * 
 	 * @return lista de estudiantes
 	 */
@@ -43,25 +50,23 @@ public class EstudianteService {
 	
 	/**
 	 * Ordenamiento por apellido ASC
-	 * @return ordenamiento arc por apellido
+	 * @return ordenamiento asc por apellido
 	 */
 	private Sort orderBySurnameAsc() {
 		return Sort.by(Sort.Direction.ASC, "apellido");
 	}
 	
 	/**
-	 * 2
-	 * d) recuperar un estudiante, en base a su número de libreta universitaria.
+	 * 2 d) recuperar un estudiante, en base a su número de libreta universitaria.
 	 * @param libreta
-	 * @return
+	 * @return estudiante
 	 */
 	public Estudiante getEstudiante(int libreta) {
 		return repository.getEstudianteById(libreta);
 	}
 	
 	/**
-	 * 2
-	 * e) recuperar todos los estudiantes, en base a su género.
+	 * 2 e) recuperar todos los estudiantes, en base a su género.
 	 * @param genero
 	 * @return lista de estudiantes por genero
 	 */

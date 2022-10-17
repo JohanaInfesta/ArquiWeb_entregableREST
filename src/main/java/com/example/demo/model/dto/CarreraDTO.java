@@ -1,6 +1,14 @@
 package com.example.demo.model.dto;
-
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 public class CarreraDTO {
 
 private String nombre;

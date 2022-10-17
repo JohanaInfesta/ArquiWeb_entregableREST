@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,6 +11,16 @@ import com.example.demo.model.CarreraEstudiante;
 import com.example.demo.model.Estudiante;
 import com.example.demo.model.dto.CarreraDTO;
 import com.example.demo.model.dto.ReporteDTO;
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @Repository
 public interface CarreraEstudianteRepository extends JpaRepository<CarreraEstudiante, Integer>{
 

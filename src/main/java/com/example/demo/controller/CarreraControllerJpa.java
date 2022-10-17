@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Carrera;
 import com.example.demo.services.CarreraService;
-
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @RestController
 public class CarreraControllerJpa {
 

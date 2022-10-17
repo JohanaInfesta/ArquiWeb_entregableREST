@@ -14,7 +14,16 @@ import com.example.demo.model.dto.CarreraDTO;
 import com.example.demo.model.dto.ReporteDTO;
 import com.example.demo.repository.CarreraEstudianteRepository;
 import com.example.demo.repository.EstudianteRepository;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @Service
 public class CarreraEstudianteService {
 
@@ -27,7 +36,12 @@ public class CarreraEstudianteService {
 		this.repository = repository;
 		this.estudianteRepository = estudianteRepository;
 	}
-	// falta matricular carrera
+	/**
+	 * 2 b) matricular un estudiante en una carrera
+	 * @param libreta
+	 * @param carreraID
+	 * @return estudiante con carrera inscripto
+	 */
 	public CarreraEstudiante matricularEstudiante(int libreta, int carreraID) {
 		Carrera carrera = repository.getCarreraId(carreraID);
 		Estudiante estudiante = estudianteRepository.getEstudianteById(libreta);
@@ -59,8 +73,7 @@ public class CarreraEstudianteService {
 	}
 
 	/**
-	 * 2 
-	 * h) generar un reporte de las carreras, que para cada carrera incluya
+	 * 2 h) generar un reporte de las carreras, que para cada carrera incluya
 	 * información de los inscriptos y egresados por año. Se deben ordenar las
 	 * carreras alfabéticamente, y presentar los años de manera cronológica.
 	 * @return reporte solicitado

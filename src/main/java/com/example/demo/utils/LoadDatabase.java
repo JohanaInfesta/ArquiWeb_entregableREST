@@ -13,7 +13,16 @@ import com.example.demo.repository.CarreraRepository;
 import com.example.demo.repository.EstudianteRepository;
 
 import lombok.extern.slf4j.Slf4j;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @Configuration
 @Slf4j
 public class LoadDatabase {
@@ -24,8 +33,8 @@ private static final Logger logger = LoggerFactory.getLogger(LoadDatabase.class)
 //	@Bean
 //	CommandLineRunner initEstudiante(@Qualifier("estudianteRepository") EstudianteRepository repository) {
 //		return args -> {
-//			logger.info("preloading" + repository.save(new Estudiante("Seba", "Perez", 20, "masculino", 40520425, "Tandil")));
-//			logger.info("preloading" + repository.save(new Estudiante("Jose", "Gomez", 21, "masculino", 41520425, "Tandil")));
+//			logger.info("preloading" + repository.save(new Estudiante("Seba", "Perez", 20, "masculino", 40520425, "Olavarria")));
+//			logger.info("preloading" + repository.save(new Estudiante("Johana", "Infesta", 31, "femenino", 35580050, "Tandil")));
 //		};
 //	}
 //	

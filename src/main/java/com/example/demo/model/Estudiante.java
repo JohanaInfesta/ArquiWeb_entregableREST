@@ -10,8 +10,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import lombok.Data;
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @Entity
 @Data
 public class Estudiante {
@@ -33,6 +44,7 @@ public class Estudiante {
 	@Column
 	private String ciudad;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "estudiante", fetch=FetchType.LAZY)
 	private List <CarreraEstudiante>inscripcion;
 

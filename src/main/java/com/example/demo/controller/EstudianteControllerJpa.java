@@ -12,7 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Estudiante;
 import com.example.demo.services.EstudianteService;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @RestController
 public class EstudianteControllerJpa {
 

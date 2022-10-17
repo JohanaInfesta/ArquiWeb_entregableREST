@@ -8,7 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Carrera;
 import com.example.demo.repository.CarreraRepository;
-
+/**
+ * 
+ * @author 
+ * <ul>
+ *    <li>Johana Infesta</li>
+ *    <li>Rocio Giannaccini</li>
+ *    <li>Juan Mauro</li>
+ *    <li>Juan Manuel Campo</li>
+ *  </ul>
+ */
 @Service
 public class CarreraService {
 	@Qualifier("carreraRepository")
