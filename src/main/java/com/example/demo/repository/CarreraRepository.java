@@ -8,5 +8,7 @@ import com.example.demo.model.Carrera;
 public interface CarreraRepository extends JpaRepository<Carrera, Integer>{
 
 	@Query("SELECT c FROM Carrera c WHERE c.carreraID= :carreraID")
-	public Carrera getCarreraById(int carreraID);
+	public Iterable<Carrera> getCarreraById(int carreraID);
+	
+	
 }

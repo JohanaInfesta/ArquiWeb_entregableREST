@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +29,10 @@ public class CarreraControllerJpa {
 	@PostMapping("/carrera")
 	Carrera agregarCarrera(@RequestBody Carrera c) {
 		return service.addCarrera(c);
+	}
+	@GetMapping("/carrera/{carreraID}")
+	Optional<Carrera> getCarrera(@PathVariable int carreraID) {
+		return service.getCarrera(carreraID);
 	}
 	
 }

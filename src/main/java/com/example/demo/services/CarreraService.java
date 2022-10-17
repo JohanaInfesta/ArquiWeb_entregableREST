@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,10 @@ public class CarreraService {
 
 	public Carrera addCarrera(Carrera c) {
 		return repository.save(c);
+	}
+	
+	public Optional<Carrera> getCarrera(int id) {
+		return repository.findById(id);
 	}
 	
 }
