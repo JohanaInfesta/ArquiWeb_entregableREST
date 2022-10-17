@@ -29,6 +29,8 @@ public class LoadDatabase {
 
 private static final Logger logger = LoggerFactory.getLogger(LoadDatabase.class);
 	
+//Correr con MySQL 
+//conexion hecha en resources application.properties
 
 //	@Bean
 //	CommandLineRunner initEstudiante(@Qualifier("estudianteRepository") EstudianteRepository repository) {
